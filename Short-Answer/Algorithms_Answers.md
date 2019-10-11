@@ -9,7 +9,9 @@ a) 0(n) - linear time
 b) 0(n^2) - quadratic time
     The algorithim needs to perfrom a linear opearation for each input value n so it has quadratic time complexity.
 
-c)
+c) 0(n) - linear time
+    The algorithims run time increases linearly with the size of 
+    input n.
 
 ## Exercise II
 
