@@ -2,10 +2,11 @@
 
 ## Exercise I
 
-a)
+a) 0(n) - linear time
+    The algorithim has a liniear time complexity because the time increases in porportion to the input n.
 
 
-b)
+b) 
 
 
 c)
