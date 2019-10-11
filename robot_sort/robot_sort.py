@@ -97,12 +97,15 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
+        self.set_light_off()
 
         while (self.can_move_right()):
             print(self._position)
+            
+            self.set_light_on()
             self.move_right()
 
-
+        print(self.light_is_on())
 
 
 
