@@ -15,17 +15,18 @@ Your function must utilize recursion. It cannot contain any loops.
 
 
 
-def count_th(word):
-    print(word)
+def count_th(word, count):
+    # print(word)
+
     i = 0
-    if len(word) <= 1:
-        return len(word)/2
+    if len(word) <= 0:
+        return  count
     else:
         if word[i] == 't' and word[i + 1] == "h":
             print(word[:2])
-            return count_th(word[2:])
+            return count_th(word[2:], count)
         else:
-            return count_th(word[1:])
+            return count_th(word[1:], count)
 
 
 
@@ -48,4 +49,4 @@ def count_th(word):
     # print(count_th("abcthefthghith")) #3
 # count_down(5)
 
-print(count_th("hecthtorthfsd"))
+print(count_th("hecthtorthfsdth", 0))
