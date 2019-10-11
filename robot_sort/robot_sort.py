@@ -97,16 +97,13 @@ class SortingRobot:
         if self._position < len(self._list) - 1 :
             self._item = self._list[self._position + 1]
 
-
     def sort(self):
         self.set_light_off()
         self.set_item()
 
-
         while (self.can_move_right()):
-            if self.compare_item() == -1: #self._list[self._position] > self._list[self._position + 1]:
-                #print(f"current iterm: {self._item}\t {self.compare_item()}")
-                self.swap_item()  # self._list[self._position], self._list[self._position + 1] = self._list[self._position + 1],  self._list[self._position] 
+            if self.compare_item() == -1:
+                self.swap_item()  
                 self.set_light_on()
 
             self.move_right()
