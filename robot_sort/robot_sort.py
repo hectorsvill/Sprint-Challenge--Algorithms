@@ -92,6 +92,39 @@ class SortingRobot:
         """
         return self._light == "ON"
 
+
+    def set_item(self):
+        if self._position < len(self._list) - 1 :
+            self._item = self._list[self._position + 1]
+
+
+    def sort_2(self):
+        self.set_light_off()
+        self.set_item()
+
+
+        while (self.can_move_right()):
+
+            
+            if self.compare_item() == -1: #self._list[self._position] > self._list[self._position + 1]:
+                print(f"current iterm: {self._item}\t {self.compare_item()}")
+                self._list[self._position], self._list[self._position + 1] = self._list[self._position + 1],  self._list[self._position] 
+                self.set_light_on()
+                
+            
+            self.move_right()
+            self.set_item()
+
+        print(self._list)
+        while (self.can_move_left()):
+            self.move_left()
+
+        if self.light_is_on():
+            return self.sort()
+        else:
+            return
+
+
     def sort(self):
         """
         Sort the robot's list.
@@ -101,11 +134,14 @@ class SortingRobot:
 
         while (self.can_move_right()):
             if self._list[self._position] > self._list[self._position + 1]:
-                self._list[self._position], self._list[self._position + 1] = self._list[self._position + 1],  self._list[self._position]
+                self._list[self._position], self._list[self._position + 1] = self._list[self._position + 1],  self._list[self._position] 
                 self.set_light_on()
-                # print(self._list)
+                
+            
             self.move_right()
+            
 
+        print(self._list)
         while (self.can_move_left()):
             self.move_left()
 
@@ -113,8 +149,7 @@ class SortingRobot:
             return self.sort()
         else:
             return
-        
-        print(self.light_is_on())
+
 
 
 
@@ -127,7 +162,7 @@ if __name__ == "__main__":
        
     robot = SortingRobot(small_list)
 
-    robot.sort()
+    robot.sort_2()
     
     
     print(robot._list)
