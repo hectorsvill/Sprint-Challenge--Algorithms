@@ -15,38 +15,21 @@ Your function must utilize recursion. It cannot contain any loops.
 
 
 
-def count_th(word, count):
+def count_th(word):
     # print(word)
 
     i = 0
-    if len(word) <= 0:
-        return  count
+    if len(word) - 1 <= 0:
+        return i
     else:
-        if word[i] == 't' and word[i + 1] == "h":
-            print(word[:2])
-            return count_th(word[2:], count)
+        if word[0] == 't' and word[1] == "h":
+            # print(word[:2])
+            return count_th(word[2:])  + 1
         else:
-            return count_th(word[1:], count)
+            return count_th(word[1:])
 
 
 
 
 
-# def print_c(word):
-#     print(word)
-#     i = 0
-#     if len(word) <= 1:
-#         return i
-
-#     else:
-#         i += 1
-#         return print_c(word[1:])
-
-
-
-
-# if __name__ == "__main__":
-    # print(count_th("abcthefthghith")) #3
-# count_down(5)
-
-print(count_th("hecthtorthfsdth", 0))
+print(count_th("thhtthht"))
