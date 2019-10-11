@@ -100,17 +100,14 @@ class SortingRobot:
         self.set_light_off()
 
         while (self.can_move_right()):
-            
             if self._list[self._position] > self._list[self._position + 1]:
                 self._list[self._position], self._list[self._position + 1] = self._list[self._position + 1],  self._list[self._position]
                 self.set_light_on()
-                print(self._list)
-                
+                # print(self._list)
             self.move_right()
 
         while (self.can_move_left()):
             self.move_left()
-
 
         if self.light_is_on():
             return self.sort()
@@ -133,4 +130,4 @@ if __name__ == "__main__":
     robot.sort()
     
     
-    # print(robot._list)
+    print(robot._list)
