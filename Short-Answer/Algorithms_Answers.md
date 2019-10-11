@@ -15,4 +15,8 @@ c) 0(n) - linear time
 
 ## Exercise II
 
+<!-- Suppose that you have an n-story building and plenty of eggs. Suppose also that an egg gets broken if it is thrown off floor f or higher, and doesn't get broken if dropped off a floor less than floor f. Devise a strategy to determine the value of f such that the number of dropped + broken eggs is minimized.     -->
 
+ To find f. Start From the middle of the building and drop and egg. If it does not brake then set min flor f and recursively call the function to spit the number n in half, it it does brake set max floor and recursively  call the function to spit the number n in half. 
+
+ 0(n^2)
